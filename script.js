@@ -14,6 +14,7 @@ const marsSolInput = document.getElementById("marsSolInput");
 const earthDateInput = document.getElementById("earthDateInput");
 const persResult = document.querySelector(".persResult");
 const persForm = document.querySelector(".persForm");
+const inner = document.querySelector(".inner");
 
 marsSolForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -85,22 +86,30 @@ pers.addEventListener("click", () => {
   persForm.classList.add("dblock");
   persResult.classList.remove("dblock");
   persResult.classList.add("dnone");
+  inner.classList.remove("dflex");
+  inner.classList.add("dnone");
 });
 
 potd.addEventListener("click", () => {
   potdDialog.classList.remove("dnone");
   potdDialog.classList.add("dblock");
+  inner.classList.remove("dflex");
+  inner.classList.add("dnone");
 });
 
 potdCloseButton.addEventListener("click", () => {
   potdDialog.classList.remove("dblock");
   potdDialog.classList.add("dnone");
+  inner.classList.remove("dnone");
+  inner.classList.add("dflex");
 });
 
 persCloseButton.addEventListener("click", () => {
   persDialog.classList.remove("dblock");
   persDialog.classList.add("dnone");
   persResult.innerHTML = "";
+  inner.classList.remove("dnone");
+  inner.classList.add("dflex");
 });
 
 window.addEventListener("load", () => {
