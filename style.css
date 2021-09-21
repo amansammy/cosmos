@@ -125,6 +125,7 @@ button:hover {
   z-index: 1;
   background: rgba(0, 0, 0, 0.849);
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   display: none;
 }
 
@@ -258,6 +259,7 @@ button:hover {
   line-height: 30px;
   letter-spacing: 1px;
   word-spacing: 2px;
+  padding-bottom: 150px;
 }
 
 @media only screen and (max-width: 800px) {
@@ -285,6 +287,9 @@ button:hover {
 }
 
 @media only screen and (max-width: 600px) {
+  .potdDialog {
+    background: rgba(0, 0, 0, 0.925);
+  }
   .potd {
     width: 80%;
     padding-top: 30px;
@@ -296,7 +301,8 @@ button:hover {
   }
 
   .potdDialogInner {
-    width: 90%;
+    width: 100%;
+    padding: 30px;
   }
 
   .potdDialogInner img {
