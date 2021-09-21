@@ -159,6 +159,7 @@ button:hover {
   z-index: 5;
   background: rgba(0, 0, 0, 0.849);
   backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   display: none;
 }
 
