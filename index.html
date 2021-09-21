@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>cosmos: a nasa api</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="persDialog">
+      <div class="persDialogInner">
+        <div class="persForm">
+          By Martian sol:
+          <form class="marsSol">
+            <label for="marsSolInput">Enter Martian sol: </label>
+            <input type="text" name="marsSolInput" id="marsSolInput" />
+            <br />
+            <button>Submit</button>
+          </form>
+          <br />
+          By Earth date:
+          <form class="earthDate">
+            <label for="earthDateInput">Enter Earth date (yyyy-mm-dd): </label>
+            <input type="text" name="earthDateInput" id="earthDateInput" />
+            <br />
+            <button>Submit</button>
+          </form>
+        </div>
+        <div class="persResult"></div>
+        <span class="persCloseButton">x</span>
+      </div>
+    </div>
+    <div class="potdDialog">
+      <div class="potdDialogInner">
+        <span class="potdCloseButton">x</span>
+        <p id="potdDate"></p>
+        <p id="explanation"></p>
+      </div>
+    </div>
+    <div class="outer">
+      <div class="logo">
+        <p>cosmos.</p>
+      </div>
+      <div class="banner">
+        <img src="./imgs/nasa.png" alt="" />
+        +
+        <img src="./imgs/js.png" alt="" />
+      </div>
+      <div class="potd"></div>
+      <div class="inner">
+        <div class="innerStyle" id="pers">
+          <p>PERSEVERANCE ROVER CAMERA PHOTOS</p>
+        </div>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,361 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100vh;
+  background: rgb(0, 0, 0);
+}
+
+body {
+  font-size: 1.4em;
+  text-rendering: optimizeLegibility;
+  font-family: "Poppins", sans-serif;
+}
+
+body,
+ul,
+ol,
+dl {
+  margin: 0;
+}
+
+article,
+aside,
+audio,
+footer,
+header,
+nav,
+section,
+video {
+  display: block;
+}
+
+.dblock {
+  display: block !important;
+}
+
+.dnone {
+  display: none !important;
+}
+
+.dflex {
+  display: flex !important;
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+@-webkit-keyframes flash {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flash {
+  0% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+button {
+  padding: 4px 15px;
+  background: #272727;
+  color: white;
+  font-size: 0.8em;
+  border: none;
+  border-radius: 20px;
+  border: 2px solid white;
+  margin-top: 10px;
+}
+
+label {
+  font-size: 0.8em;
+  padding: 0 20px;
+  letter-spacing: 2px;
+  color: white;
+}
+
+input[type="text"] {
+  width: 100%;
+}
+
+.persForm {
+  letter-spacing: 2px;
+}
+
+button:hover {
+  background: white;
+  color: black;
+}
+
+/* Boilerplate end */
+
+.banner {
+  width: 100%;
+  display: flex;
+  color: white;
+  justify-content: center;
+  font-size: 2rem;
+  gap: 20px;
+  margin-top: -20px;
+}
+
+.banner img {
+  align-self: center;
+  width: 30px;
+}
+
+.potdDialog {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.849);
+  backdrop-filter: blur(5px);
+  display: none;
+}
+
+.potdDialogInner {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  margin: 100px auto;
+  text-align: center;
+  color: white;
+  padding: 50px;
+}
+
+.potdDialogInner img {
+  width: 70%;
+}
+
+.potdDialogInner span,
+.persDialogInner span {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  font-size: larger;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.persDialog {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  background: rgba(0, 0, 0, 0.849);
+  backdrop-filter: blur(5px);
+  display: none;
+}
+
+.persDialogInner {
+  position: relative;
+  width: 50%;
+  margin: 100px auto;
+  text-align: center;
+  color: white;
+  padding: 50px;
+}
+
+.persResult {
+  display: none;
+}
+
+.persResult img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.persForm {
+  color: rgb(255, 145, 19);
+}
+
+.outer {
+}
+
+.logo {
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding-top: 20px;
+}
+
+.logo p {
+  font-size: 4rem;
+}
+
+.potd {
+  padding-top: 70px;
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  filter: blur(2px);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.potd img {
+  width: 100%;
+}
+
+.potd:hover {
+  -webkit-filter: blur(0);
+  filter: blur(0);
+}
+
+.middleText {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  cursor: pointer;
+  letter-spacing: 5px;
+}
+
+.inner {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding-top: 70px;
+  padding-bottom: 100px;
+}
+
+#potdDate {
+  margin-top: 20px;
+  font-size: 1rem;
+  font-style: italic;
+  color: orange;
+}
+
+#explanation {
+  margin-top: 20px;
+  font-size: 1rem;
+  text-align: justify;
+  font-weight: 100;
+  line-height: 30px;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+@media only screen and (max-width: 800px) {
+  .break {
+    display: none;
+  }
+
+  .potd {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .break {
+    display: none;
+  }
+
+  .potd {
+    width: 60%;
+  }
+
+  .potdDialogInner {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .potd {
+    width: 80%;
+    padding-top: 30px;
+    filter: blur(0);
+  }
+
+  .innerStyle {
+    width: 80% !important;
+  }
+
+  .potdDialogInner {
+    width: 90%;
+  }
+
+  .potdDialogInner img {
+    width: 100%;
+  }
+
+  #potdDate {
+    margin-top: 20px;
+    font-size: 1rem;
+    font-style: italic;
+    color: orange;
+  }
+
+  #explanation {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    text-align: justify;
+    font-weight: 200;
+    line-height: 22px;
+  }
+
+  .persDialogInner {
+    width: 95%;
+  }
+}
+
+.innerStyle {
+  position: relative;
+  width: 500px;
+  height: 300px;
+  background-color: rgba(0, 0, 0, 0.445);
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+.innerStyle:hover {
+  -webkit-filter: grayscale(0);
+  filter: grayscale(0);
+}
+
+.innerStyle p {
+  top: 10px;
+  left: 20px;
+  position: absolute;
+  font-size: 1rem;
+  font-weight: 300;
+  color: white;
+  letter-spacing: 5px;
+}
+
+#pers {
+  background: url("./imgs/persRover.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+#cur {
+  background: url("./imgs/curRover.jpg");
+  background-position: center;
+  background-size: cover;
+}
