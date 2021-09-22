@@ -119,42 +119,59 @@ window.addEventListener("load", () => {
 
 const updatePotd = async () => {
   const data = await getPotd();
-  const potdImg = document.createElement("img");
-  const potdDiv = document.createElement("div");
-  const potdTitle = document.createTextNode("PHOTO OF THE DAY");
+  const mediaType = data.media_type;
+  console.log(mediaType);
+  if (mediaType == "video") {
+    const potdImg = document.createElement("img");
+    potdImg.setAttribute("src", "imgs/curRover.jpg");
+    const potdDiv = document.createElement("div");
+    const potdTitle = document.createTextNode("PHOTO OF THE DAY");
 
-  potdImg.setAttribute("src", `${data.hdurl}`);
-  potdDiv.classList.add("middleText");
-  potdDiv.append(potdTitle);
-  potd.append(potdImg);
-  potd.append(potdDiv);
+    potdDiv.classList.add("middleText");
+    potdDiv.append(potdTitle);
+    potd.append(potdImg);
+    potd.append(potdDiv);
+  } else if (mediaType == "image") {
+    const potdImg = document.createElement("img");
+    const potdDiv = document.createElement("div");
+    const potdTitle = document.createTextNode("PHOTO OF THE DAY");
 
-  /*  potdDialog.innerHTML = `<div class="potdDialogInner">
-  <img src="${data.hdurl}" alt="" /><span class="closeButton"
-    >x</span
-  >
-  <p>
-  ${data.date}
-  </p>
-  <p>
-    ${data.explanation}
-  </p>
-</div>`; */
+    potdImg.setAttribute("src", `${data.url}`);
+    potdDiv.classList.add("middleText");
+    potdDiv.append(potdTitle);
+    potd.append(potdImg);
+    potd.append(potdDiv);
+  }
 };
 
 const updatePotdDialog = async () => {
   const data = await getPotd();
+  const mediaType = data.media_type;
 
-  const potdDialogImg = document.createElement("img");
-  const potdDialogDateText = document.createTextNode(`${data.date}`);
-  const potdDialogExplanationText = document.createTextNode(
-    `${data.explanation}`
-  );
+  if (mediaType == "video") {
+    const potdDialogVideo = document.createElement("iframe");
+    potdDialogVideo.setAttribute("src", `${data.url}`);
+    potdDialogVideo.classList.add("iframeProps");
+    const potdDialogDateText = document.createTextNode(`${data.date}`);
+    const potdDialogExplanationText = document.createTextNode(
+      `${data.explanation}`
+    );
 
-  potdDialogImg.setAttribute("src", `${data.hdurl}`);
-  potdDialogInner.prepend(potdDialogImg);
-  potdDate.append(potdDialogDateText);
-  explanation.append(potdDialogExplanationText);
+    potdDialogInner.prepend(potdDialogVideo);
+    potdDate.append(potdDialogDateText);
+    explanation.append(potdDialogExplanationText);
+  } else if (mediaType == "image") {
+    const potdDialogImg = document.createElement("img");
+    const potdDialogDateText = document.createTextNode(`${data.date}`);
+    const potdDialogExplanationText = document.createTextNode(
+      `${data.explanation}`
+    );
+
+    potdDialogImg.setAttribute("src", `${data.url}`);
+    potdDialogInner.prepend(potdDialogImg);
+    potdDate.append(potdDialogDateText);
+    explanation.append(potdDialogExplanationText);
+  }
 };
 
 const marsSolPers = async (solInput) => {
